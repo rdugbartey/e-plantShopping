@@ -1,1 +1,3 @@
-# coding-project-template
+Repository name: e-plantShopping
+Project name: Paradise Nursery Shopping Application
+Brief overview; project involves the development of plant nursery shopping app and deployment of the app to Github pages. The app presents features like - cart quantity display, total cost display and item quantity. App interface allows users to browse a variety of house plants and include them to a shopping cart. Items are valued and total cost presented to user. Users can adjust number of items in the cart before checkout.
