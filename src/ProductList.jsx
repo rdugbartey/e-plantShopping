@@ -3,15 +3,22 @@ import { useDispatch } from 'react-redux';
 import './ProductList.css';
 import CartItem from './CartItem';
 import { addItem } from './CartSlice.jsx';
+import { useSelector } from 'react-redux';
 
 function ProductList({ onHomeClick }) {
     const dispatch = useDispatch();
+    const CartItems = useSelector((state) => state.cart.items);
+    console.log("CURRENT CART:", CartItems);
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the plant listing
     const [addedToCart, setAddedToCart] = useState({});
 
     const handleAddToCart = (product) => {
+        console.log("1. handleAddToCart was called");
+        console.log("2. Product received:", product);
+
         dispatch(addItem(product)); // Dispatch the action to add the product to the cart (Redux action)
+        console.log("3. addItem dispatched");
 
       setAddedToCart((prevState) => ({ // Update the local state to reflect that the product has been added
         ...prevState, // Spread the previous state to retain existing entries
